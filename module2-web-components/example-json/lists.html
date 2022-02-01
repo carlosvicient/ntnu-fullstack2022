@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS example random elements from list</title>
+
+    <style>
+        random-list {
+            background-color: antiquewhite;
+            margin: 1em;
+            padding: 1em;
+        }
+        
+        random-list:nth-child(2n) {
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <h1>Playing with Web components</h1>
+
+    <random-list onchange="handleChange(event)"></random-list>
+
+    <random-list onchange="handleChange(event)"></random-list>
+
+    <random-list onchange="handleChange(event)"></random-list>
+
+    <random-list onchange="handleChange(event)"></random-list>
+
+
+
+    <script src="./components/RandomList.js"></script>
+    <script>
+        function handleChange(event) {
+            console.log("A new element has been pulled from ", event.target.id);
+            console.log("-- New element pulled from list: ", event.detail.newElement);
+            console.log("-- Random list: ", event.detail.randomList);
+            console.log();
+        }
+
+        function init() {
+            console.log("inint");
+            fetch('lists.json')
+                .then(response => response.json())
+                .then(allLists => {
+                    let components = document.getElementsByTagName("random-list");
+                    console.log(allLists);
+                    allLists.map((list, index) => {
+                        console.log(`(${index}) list: ${list}`);
+                        if (index < components.length) {
+                            components[index].setStaticList(list);
+                        }
+                    });
+                });
+        }
+    </script>
+</body>
+
+</html>
