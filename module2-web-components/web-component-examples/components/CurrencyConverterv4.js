@@ -7,7 +7,7 @@ export default class CurrencyConverter extends HTMLElement {
 }
 
 //this could be replaced by shadowRoot.innerHTM...
-function getTemplate(){
+function getTemplate() {
     const template = document.createElement('template');
     template.innerHTML = `
         <style>
