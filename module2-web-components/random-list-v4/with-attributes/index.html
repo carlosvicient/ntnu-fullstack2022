@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS example random elements from list</title>
+
+    <style>
+        /* #top-container {
+            background-color: antiquewhite;
+            margin: 1em;
+            padding: 1em;
+        }
+        
+        #bottom-container {
+            background-color: cornsilk;
+            margin: 1em;
+            padding: 1em;
+        } */
+        
+        [id$="-container"] {
+            margin: 1em;
+            padding: 1em;
+        }
+        
+        [id$="-container"]:nth-child(odd) {
+            background-color: antiquewhite;
+        }
+        
+        [id$="-container"]:nth-child(even) {
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Playing with Web components</h1>
+
+    <div id="os-container">
+        <random-list list="mac, ios, android, windows"></random-list>
+    </div>
+
+    <div id="fruit-container">
+        <random-list list="apple, banana, strawberry, pear"></random-list>
+    </div>
+
+    <div id="default-container">
+        <random-list></random-list>
+    </div>
+
+    <div id="headsets-container">
+        <random-list list="jabra elite, airpods, sony"></random-list>
+    </div>
+
+    <script type="module" src="./RandomListComponent.js"></script>
+</body>
+
+</html>
