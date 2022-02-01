@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS example random elements from list</title>
+
+    <style>
+        #top-container {
+            background-color: antiquewhite;
+            margin: 1em;
+            padding: 1em;
+        }
+        
+        #bottom-container {
+            background-color: cornsilk;
+            margin: 1em;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <h1>Playing with Web components</h1>
+
+    <div id="top-container">
+        <random-list id="fruits-list" onchange="handleChange(event)"></random-list>
+    </div>
+
+    <div id="bottom-container">
+        <random-list id="tech-list"></random-list>
+    </div>
+
+    <script type="module" src="./RandomListComponent.js"></script>
+    <script>
+        const fruits = ["apple", "pineapple", "orange"];
+        const technologies = ["HTML", "CSS", "JS", "TypeScript", "Web components", "ReactJS"];
+
+
+
+        function handleChange(event) {
+            console.log("A new element has been pulled from ", event.target.id);
+            console.log("-- Event is", event);
+            console.log("-- New element pulled from list: ", event.detail.newElement);
+            console.log("-- Random list: ", event.detail.randomList);
+            console.log();
+        }
+
+        function init() {
+            //document.getElementById("fruits-list").setStaticList(fruits);
+            document.getElementById("fruits-list").staticL = fruits; //check difference between setter as method and setter as "setter"
+            document.getElementById("tech-list").setStaticList(technologies);
+        }
+    </script>
+</body>
+
+</html>
