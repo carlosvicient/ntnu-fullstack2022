@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple react app with CDN</title>
+</head>
+
+<body>
+    <h1>React using CDN links</h1>
+
+    <!-- Root used as a convention. Also "app" -->
+    <div id="root"></div>
+
+    <!-- Load React. -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Our components code should go after loading the dependencies -->
+    <script>
+        const element = React.createElement('p', null, 'Hello world! I am a react component');
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

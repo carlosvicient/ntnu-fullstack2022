@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Hello JSX!</title>
+
+  
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Load React -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <!-- Load Bable -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    
+    const allElements = (
+      <React.Fragment>
+        <p>I am an apple</p>
+        <ul>
+          <li>pen</li>
+        </ul>
+      </React.Fragment>
+    );
+
+    ReactDOM.render(allElements, document.getElementById('root'));
+  </script>
+</body>
+
+</html>

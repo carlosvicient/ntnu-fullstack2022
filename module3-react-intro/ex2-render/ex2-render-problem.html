@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple react app: createElement</title>
+</head>
+
+<body>
+    <h1>Creating elements with createElement</h1>
+
+    <!-- Root used as a convention. Also "app" -->
+    <div id="root"></div>
+
+    <!-- Load React. -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- Our components code should go after loading the dependencies -->
+    <script>
+        // Create element using name string, innerHTML (children) is a string
+        const elApple = React.createElement('p', null, 'I am an apple');
+        ReactDOM.render(elApple, document.getElementById('root'));
+
+        // Create element using name string, innerHTML (children) is a string
+        const elListPen = React.createElement('li', null, 'pen');
+
+        // Create element using name string, innerHTML (children) is a a component
+        const ulList = React.createElement('ul', null, elListPen);
+        ReactDOM.render(ulList, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
