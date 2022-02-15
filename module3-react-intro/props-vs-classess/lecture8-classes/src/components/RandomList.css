@@ -1,0 +1,24 @@
+.randomList {
+    display: block;
+    font-family: sans-serif;
+}
+
+.randomList > div {
+    padding: 1em;
+    margin: 1em;
+}
+.randomList div:first-child {
+    background-color: bisque;
+}
+
+.randomList div:nth-child(2) {
+    background-color: aquamarine;
+}
+
+.randomList li {
+    list-style-position: inside;
+}
+
+.originalList li.status_strike {
+    text-decoration: line-through;
+}
