@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 
+//invert function can only invert stated colors. If bg is not defined, it will not work. 
+// If bg is not defined, we can assume it is white and we write it manually. 
 const cssString = `
     html { filter: invert(100%); background: #fefefe; }
     * { background-color: inherit }
@@ -26,6 +28,9 @@ class ThemeSwitch extends React.Component {
                     <span aria-hidden="true">{this.state.active ? 'On' : 'Off'}</span>
                 </button>
                 <style media={this.state.active ? 'screen' : 'none'}>
+                    {/* According to Pickering, switching between media none and screen 
+                    will not apply the styles in all browsers and rewriting the style 
+                    forces the browswer to repaint the UI */}
                     {this.state.active ? this.state.css.trim() : this.state.css}
                 </style>
             </Fragment>
