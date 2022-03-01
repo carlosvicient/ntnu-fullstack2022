@@ -15,7 +15,7 @@ class AwesomeList extends Component {
     constructor(props) {
         super(props);
         this.state = { ...DEFAULT_STATE, list: this.props.list };
-        this.input = React.createRef();
+        this.input = React.createRef(); //1) Create a React reference
         this.clearArray = this.clearArray.bind(this);
         this.pushElem = this.pushElem.bind(this);
         this.resetArray = this.resetArray.bind(this);
@@ -38,6 +38,7 @@ class AwesomeList extends Component {
                 </ul>
                 <div>
                     <label htmlFor="input">List item</label>
+                    {/* define the element the reference points to via ref attribute/prop */}
                     <input
                         id="input"
                         type="text"
@@ -128,6 +129,8 @@ class AwesomeList extends Component {
                 }
             }
         }, () => this.input.current.focus());
+        //When a ref is passed to an element in render, a reference to the node becomes accessible at the current attribute of the ref.
+        //https://reactjs.org/docs/refs-and-the-dom.html
     }
 
     _isControlSet(controlName) {
@@ -160,8 +163,11 @@ class AwesomeList extends Component {
 
     _updateInputValueAndEditedElementInList(value){
         this.setState((state) => {
+            //copy of current list
             let newList = [...state.list];
+            //we need to update a specific element from the list.
             newList[state.input.index] = value;
+
             return {
                 list: newList,
                 input: {
