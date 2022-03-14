@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+  font-size: 18px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100%;
+}
+
+.App-header nav {
+  width: 100%;
+}
+
+.App-header ul {
+  list-style: none;
+  display: flex;
+}
+
+.App-header ul li {
+  padding: .5em;
+}
+
+.App-header a {
+  color: #61dafb;
+}
+
+a {
+  color: #282c34;
+}
