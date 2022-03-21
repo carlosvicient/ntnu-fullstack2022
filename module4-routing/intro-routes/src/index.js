@@ -16,10 +16,9 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="posts" element={<Posts />} />
-          {/* if we want to render posts and post in the same view 
-          we can nest the routes and add an outlet to posts*/}
-          <Route path="posts/:slug" element={<Post />} />
+          <Route path="posts" element={<Posts />}>
+            <Route path=":slug" element={<Post />} />
+          </Route>
           <Route
             index
             element={

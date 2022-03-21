@@ -35,3 +35,37 @@
 a {
   color: #282c34;
 }
+
+.two-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.two-columns > *  {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.two-columns .menu-column {
+  flex: 1;
+}
+
+.two-columns .content-column {
+  flex: 2;
+}
+
+.no-list {
+  list-style-type: none;
+}
+
+.no-list > li {
+  min-height: 3em;
+}
+
+.active {
+  font-weight: bold;
+}

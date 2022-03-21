@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import { findPost } from "../data";
 
-
 const Post = () => {
     let params = useParams();
     let post = findPost(params.slug);
+    console.log(params);
+    console.log(post);
 
     if (!post) {
         return (
