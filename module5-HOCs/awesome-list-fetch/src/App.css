@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App #container {
+  max-width: 600px;
+  margin: 1.5em auto;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+ul {
+  background-color: bisque;
+  min-height: 2em;
+}
+
+li>span.delete, li>span.edit {
+  margin: 0 0.5em;
+}
+
+.UserCarousel {
+  background-color: transparent;
+  padding: 2em;
+  border: 5px solid #282c34;
+}
+
+.UserCarousel ul {
+  background-color: transparent;
+}
