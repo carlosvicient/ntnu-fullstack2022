@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  font-size: 18px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+main li {
+  list-style-position: inside;
+}  
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.flex-row > *{
+  margin:  1em;
+  font-size: inherit;
+  padding: 1em;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
